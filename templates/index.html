@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/static/app.css"
+    />
+    <title>Boggle Game</title>
+  </head>
+  <body>
+    <section id="boggle">
+      <table class="board">
+        <tbody>
+          {% for row in board %}
+          <tr>
+            {% for cell in row %}
+            <td>{{cell}}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <form action="/guess" method="post">
+        <label for="guess"></label>
+        <input type="text" name="guess" placeholder="Place your guess" />
+        <button class="button">Submit Guess</button>
+      </form>
+    </section>
+
+    <script src="/static/app.js?v=1"></script>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+  </body>
+</html>
