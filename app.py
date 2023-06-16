@@ -3,6 +3,7 @@ from flask import Flask, request, render_template, redirect, flash, session
 from flask_debugtoolbar import DebugToolbarExtension
 
 
+
 app = Flask(__name__, static_folder='static')
 app.config['SECRET_KEY'] = "secret"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
@@ -20,9 +21,8 @@ def show_boggle():
     return render_template('index.html', board=board)
 
 
-@app.route('/guess', methods=['POST'])
-def handle_guess():
-    guess = request.form.get('guess')
 
-    return redirect('/')
+
+
+
 
