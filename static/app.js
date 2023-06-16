@@ -1,15 +1,13 @@
 let form = document.querySelector("form");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log("the button is being clicked! again again ");
-});
-
-let input = document.querySelector("form input")
-
-let guess = input.value
-
 async function getGuess() {
-    let res = await axios.post('/guess', )
+  let guess = document.querySelector("#guess").value;
+  let res = await axios.get("/guess", { params: { guess: guess } });
 }
 
+function handleResponse(data) {
+  console.log("Server response:", data);
+}
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  getGuess();
+});
