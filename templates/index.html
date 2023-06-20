@@ -20,7 +20,7 @@
         </tbody>
       </table>
 
-      <form action="" method="post">
+      <form action="" method="" id="form">
         <label for="guess"></label>
         <input
           id="guess"
@@ -30,9 +30,12 @@
         />
         <button class="button">Submit Guess</button>
       </form>
+      <div id="score"></div>
+      <div id="highscore"></div>
+      <div id="times-played"></div>
     </section>
 
-    <script src="/static/app.js"></script>
+    <script src="/static/app.js?_={{time}}"></script>
     <script src="http://unpkg.com/jquery?"></script>
     <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
   </body>
