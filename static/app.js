@@ -28,7 +28,7 @@ async function handleSubmit(e) {
   if (result === "ok") {
     alert("Valid word!");
     score += guess.length;
-    total.innerHTML = "Score: " + score;
+    total.innerHTML = score;
     console.log("Score: ", score);
   }
   //If the word is not-on-board, tell the user

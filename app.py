@@ -45,8 +45,8 @@ def gameOver():
     played_times = session.get('played_times', 0)
 
 #If the score that was sent in was higher than the high score, set the new highscore.
-    if int(score) > highscore:
-        session['highscore'] = int(score)
+
+    session['highscore'] = int(score) if int(score) > highscore else highscore
 #Increment the amount of times played
     session['played_times'] = played_times + 1
 
